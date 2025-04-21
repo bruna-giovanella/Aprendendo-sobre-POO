@@ -2,7 +2,9 @@ package br.com.alura.cameo.modelos;
 
 // Extends = estende a classe Titulo --> HERDA
 
-public class Filme extends Titulo {
+import br.com.alura.cameo.calculos.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
     public String getDiretor() {
@@ -11,5 +13,11 @@ public class Filme extends Titulo {
 
     public void setDiretor(String diretor) {
         this.diretor = diretor;
+    }
+
+
+    @Override
+    public int getClassificacao() {
+        return (int) getAverage() / 2;
     }
 }

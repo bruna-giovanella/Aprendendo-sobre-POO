@@ -1,6 +1,8 @@
 package br.com.alura.cameo.modelos;
 
-public class Serie extends Titulo{
+import br.com.alura.cameo.calculos.Classificavel;
+
+public class Serie extends Titulo implements Classificavel {
     private int temporadas;
     private int episodiosPorTemporada;
     private boolean ativa;
@@ -43,4 +45,9 @@ public class Serie extends Titulo{
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
+    @Override
+    public int getClassificacao() {
+        return (int) getAverage() / 5;
+        // A regra do getClassificacao() pode ser diferente em cada classe onde está sendo usado
+    }
 }

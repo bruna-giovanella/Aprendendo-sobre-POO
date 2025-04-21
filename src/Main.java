@@ -1,4 +1,5 @@
 import br.com.alura.cameo.calculos.CalculadoraDeTempo;
+import br.com.alura.cameo.calculos.FiltroRecomendacao;
 import br.com.alura.cameo.modelos.Filme;
 import br.com.alura.cameo.modelos.Serie;
 
@@ -38,5 +39,9 @@ public class Main {
         calculadora.inclui(lalaland);
         calculadora.inclui(gilmoreGirls);
         System.out.println(calculadora.getTempoTotal());
+
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(poderosoChefao);
     }
 }
