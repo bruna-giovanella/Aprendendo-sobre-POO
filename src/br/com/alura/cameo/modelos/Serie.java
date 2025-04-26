@@ -50,4 +50,9 @@ public class Serie extends Titulo implements Classificavel {
         return (int) getAverage() / 5;
         // A regra do getClassificacao() pode ser diferente em cada classe onde está sendo usado
     }
+
+    @Override
+    public String toString(){
+        return "Série: " + getName() + " (" + getReleaseYear() +")";
+    }
 }

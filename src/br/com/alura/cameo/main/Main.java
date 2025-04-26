@@ -1,16 +1,16 @@
+package br.com.alura.cameo.main;
 import br.com.alura.cameo.calculos.CalculadoraDeTempo;
 import br.com.alura.cameo.calculos.FiltroRecomendacao;
 import br.com.alura.cameo.modelos.Filme;
 import br.com.alura.cameo.modelos.Serie;
-
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         // instanciando a classe
         Filme poderosoChefao = new Filme("O poderoso chefão", 1970);
-//        poderosoChefao.setName("O poderoso chefão");
-//        poderosoChefao.setReleaseYear(1970);
+/*      poderosoChefao.setName("O poderoso chefão");
+        poderosoChefao.setReleaseYear(1970); */
         poderosoChefao.setMovieDuration(180);
         poderosoChefao.setPlanInclusion(true);
 
