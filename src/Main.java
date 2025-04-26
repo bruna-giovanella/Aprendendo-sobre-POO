@@ -3,6 +3,8 @@ import br.com.alura.cameo.calculos.FiltroRecomendacao;
 import br.com.alura.cameo.modelos.Filme;
 import br.com.alura.cameo.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // instanciando a classe
@@ -40,8 +42,30 @@ public class Main {
         calculadora.inclui(gilmoreGirls);
         System.out.println(calculadora.getTempoTotal());
 
+        Filme starWars = new Filme();
+        starWars.setName("Star Wars");
+        starWars.setReleaseYear(2009);
+        starWars.setMovieDuration(300);
+        starWars.rate(10);
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(poderosoChefao);
+
+
+        // Inicializa e indica o < tipo que será colocado dentro da lista >
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        // adicionando à lista
+        listaDeFilmes.add(starWars);
+        listaDeFilmes.add(lalaland);
+        listaDeFilmes.add(poderosoChefao);
+        // verificar o tamanho da lista
+        System.out.println("Tamanho da lista de filmes: " + listaDeFilmes.size());
+        // pegar um item da lista -> nesse caso, pegamos um objeto e apartir do objeto pegamos algo
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getName());
+        // imprimir a lista
+        // originalmente toString retorna a localização do espaço na memória, por isso foi sobescrito
+        System.out.println("toString do " + listaDeFilmes.get(0).toString());
+        System.out.println(listaDeFilmes.toString());
+
     }
 }
