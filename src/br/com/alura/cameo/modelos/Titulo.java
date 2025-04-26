@@ -39,6 +39,14 @@ public class Titulo {
     private double totalRatingScore;
     private int numberOfRatings;
 
+    // Construtor
+
+
+    public Titulo(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
+
     //declaração de method
     public void showTechnicalInfo(){
         System.out.println("Nome do br.com.alura.cameo.modelos.Filme: " + name);
@@ -65,28 +73,22 @@ public class Titulo {
     public int getNumberOfRatings() {
         return numberOfRatings;
     }
-
     // retornar media das avaliações
     public double getAverage(){
         return totalRatingScore / numberOfRatings;
     }
-
     public String getName() {
         return name;
     }
-
     public int getReleaseYear() {
         return releaseYear;
     }
-
     public int getMovieDuration() {
         return movieDuration;
     }
-
     public boolean isPlanInclusion() {
         return planInclusion;
     }
-
     public double getTotalRatingScore() {
         return totalRatingScore;
     }
@@ -99,15 +101,12 @@ public class Titulo {
         this.name = name;
         // this.name chama o atributo de dentro dessa classe, o qual ser settado (mudado)
     }
-
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
-
     public void setMovieDuration(int movieDuration) {
         this.movieDuration = movieDuration;
     }
-
     public void setPlanInclusion(boolean planInclusion) {
         this.planInclusion = planInclusion;
     }
