@@ -5,6 +5,9 @@ import br.com.alura.cameo.modelos.Serie;
 import br.com.alura.cameo.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -29,5 +32,21 @@ public class MainComListas {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
         }
+
+
+        // Ordenando listas
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Zendaya");
+        buscaPorArtista.add("Tom Hanks");
+        buscaPorArtista.add("Jennifer Laurence");
+
+        Collections.sort(buscaPorArtista); // ordenou por ordem alfabética
+        System.out.println(buscaPorArtista);
+
+        // Porém, não é tão simples a ordenação de objetos, tendo em vista que possuem n parâmetros
+        Collections.sort(watchlist); // precisa fazer um método compareTo dentro de titulo;
+        System.out.println(watchlist);
+        watchlist.sort(Comparator.comparing(Titulo::getReleaseYear)); // ou faz desse jeito
     }
 }

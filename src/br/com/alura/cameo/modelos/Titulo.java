@@ -10,7 +10,9 @@ package br.com.alura.cameo.modelos;
 * Atributos e métodos únicos a clada classe poderão ser especificadas em suas devidas classes, após a herança.
 * */
 
-public class Titulo {
+import org.jetbrains.annotations.NotNull;
+
+public class Titulo implements Comparable<Titulo> {
 
     /*
     Modificadores de acesso:
@@ -109,5 +111,10 @@ public class Titulo {
     }
     public void setPlanInclusion(boolean planInclusion) {
         this.planInclusion = planInclusion;
+    }
+
+    @Override
+    public int compareTo(Titulo nomeTitulo) {
+        return this.getName().compareTo(nomeTitulo.getName());
     }
 }
