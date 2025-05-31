@@ -4,10 +4,7 @@ import br.com.alura.cameo.modelos.Filme;
 import br.com.alura.cameo.modelos.Serie;
 import br.com.alura.cameo.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -35,7 +32,7 @@ public class MainComListas {
 
 
         // Ordenando listas
-        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        List<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
         buscaPorArtista.add("Zendaya");
         buscaPorArtista.add("Tom Hanks");

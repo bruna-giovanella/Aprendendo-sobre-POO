@@ -10,6 +10,7 @@ package br.com.alura.cameo.modelos;
 * Atributos e métodos únicos a clada classe poderão ser especificadas em suas devidas classes, após a herança.
 * */
 
+import com.google.gson.annotations.SerializedName;
 import org.jetbrains.annotations.NotNull;
 
 public class Titulo implements Comparable<Titulo> {
@@ -32,8 +33,9 @@ public class Titulo implements Comparable<Titulo> {
 //    // deixar os atributos privados, para serem valores que nao possam ser mudados no main
 //    private double totalRatingScore;
 //    private int numberOfRatings;
-
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int releaseYear;
     private int movieDuration;
     private boolean planInclusion;
@@ -47,6 +49,12 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.name = meuTituloOmdb.title();
+        this.releaseYear = Integer.valueOf(meuTituloOmdb.year());
+        this.movieDuration = Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
     }
 
     //declaração de method
@@ -116,5 +124,11 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo nomeTitulo) {
         return this.getName().compareTo(nomeTitulo.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "releaseYear=" + releaseYear +
+                ", name='" + name + "', " + movieDuration;
     }
 }
